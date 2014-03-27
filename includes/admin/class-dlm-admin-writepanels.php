@@ -481,6 +481,8 @@ class DLM_Admin_Writepanels {
 				} else {
 					$total_download_count += absint( get_post_meta( $file_id, '_download_count', true ) );
 				}
+
+				do_action( 'dlm_save_downloadable_file', $file_id, $i );
 			}
 		}
 
