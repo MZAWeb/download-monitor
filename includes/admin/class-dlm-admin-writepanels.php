@@ -486,6 +486,8 @@ class DLM_Admin_Writepanels {
 
 		// Sync download_count
 		update_post_meta( $post_id, '_download_count', $total_download_count );
+
+		do_action( 'dlm_save_metabox', $post_id, $post );
 	}
 }
 
