@@ -9,7 +9,7 @@
 	<table cellpadding="0" cellspacing="0" class="dlm-metabox-content">
 		<tbody>
 
-		<?php do_action( 'dlm_downloadable_file_version_table_start' ); ?>
+		<?php do_action( 'dlm_downloadable_file_version_table_start', $i ); ?>
 
 		<tr>
 				<td width="1%">
@@ -60,7 +60,7 @@
 				</td>
 			</tr>
 
-			<?php do_action( 'dlm_downloadable_file_version_table_end' ); ?>
+			<?php do_action( 'dlm_downloadable_file_version_table_end', $i ); ?>
 
 		</tbody>
 	</table>
