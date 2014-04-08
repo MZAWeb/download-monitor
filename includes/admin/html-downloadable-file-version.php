@@ -2,7 +2,15 @@
 	<h3>
 		<button type="button" class="remove_file button"><?php _e( 'Remove', 'download_monitor' ); ?></button>
 		<div class="handlediv" title="<?php _e( 'Click to toggle', 'download_monitor' ); ?>"></div>
-		<strong>#<?php echo $file_id; ?> &mdash; <?php echo sprintf( __( '<span class="version">%s</span> (%s)', 'download_monitor' ), ( $file_version ) ? $file_version : __('n/a', 'download_monitor'), date_i18n( get_option( 'date_format' ), strtotime( $file_post_date ) ) ); ?> &mdash; <?php echo sprintf( _n('Downloaded %s time', 'Downloaded %s times', $file_download_count, 'download_monitor'), $file_download_count ); ?></strong>
+
+		<?php
+		$title = apply_filters( 'dlm_downloadable_file_version_header', '', $i, $file_id, $file_version, $file_download_count );
+		if ( ! empty( $title ) ) {
+			echo $title;
+		} else {
+		?>
+			<strong>#<?php echo $file_id; ?> &mdash; <?php echo sprintf( __( '<span class="version">%s</span> (%s)', 'download_monitor' ), ( $file_version ) ? $file_version : __( 'n/a', 'download_monitor' ), date_i18n( get_option( 'date_format' ), strtotime( $file_post_date ) ) ); ?> &mdash; <?php echo sprintf( _n( 'Downloaded %s time', 'Downloaded %s times', $file_download_count, 'download_monitor' ), $file_download_count ); ?></strong>
+		<?php } ?>
 		<input type="hidden" name="downloadable_file_id[<?php echo $i; ?>]" value="<?php echo $file_id; ?>" />
 		<input type="hidden" class="file_menu_order" name="downloadable_file_menu_order[<?php echo $i; ?>]" value="<?php echo $i; ?>" />
 	</h3>
