@@ -208,6 +208,9 @@ class DLM_Admin_Writepanels {
 						numberOfMonths: 1,
 						showButtonPanel: true,
 					});
+
+				jQuery('.downloadable_files').trigger('dlm-new-row');
+
 				});
 
 				return false;
