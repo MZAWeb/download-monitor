@@ -620,7 +620,7 @@ class WP_DLM {
 		if ( $file_path ) {
 			list( $file_path, $remote_file ) = $this->parse_file_path( $file_path );
 
-			if ( $remote_file && ! ini_get( 'allow_url_fopen' ) ) {
+			if ( empty( $file_path ) || ! file_exists( $file_path ) || ( $remote_file && ! ini_get( 'allow_url_fopen' ) ) ) {
 				// We cannot look up a hash
 				$md5   = false;
 				$sha1  = false;
