@@ -57,12 +57,6 @@
 			</tr>
 			<tr>
 				<td>
-					<label><?php _e( 'Download count', 'download_monitor' ); ?>:</label>
-					<input type="text" class="short" name="downloadable_file_download_count[<?php echo $i; ?>]" placeholder="<?php echo $file_download_count; ?>" />
-				</td>
-			</tr>
-			<tr>
-				<td>
 					<label><?php _e('File Date', 'download_monitor'); ?>:</label>
 					<input type="text" class="date-picker-field" name="downloadable_file_date[<?php echo $i; ?>]" maxlength="10" value="<?php echo date('Y-m-d', strtotime( $file_post_date ) ); ?>" /> @ <input type="text" class="hour" placeholder="<?php _e('h', 'download_monitor') ?>" name="downloadable_file_date_hour[<?php echo $i; ?>]" maxlength="2" size="2" value="<?php echo date('H', strtotime( $file_post_date ) ); ?>" />:<input type="text" class="minute" placeholder="<?php _e('m', 'download_monitor') ?>" name="downloadable_file_date_minute[<?php echo $i; ?>]" maxlength="2" size="2" value="<?php echo date('i', strtotime( $file_post_date ) ); ?>" />
 				</td>

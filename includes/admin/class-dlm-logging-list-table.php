@@ -121,7 +121,7 @@ class DLM_Logging_List_Table extends WP_List_Table {
 		$columns = array(
 			'status'     => '',
 			'download'   => __( 'Download', 'download_monitor' ),
-			'file'   => __( 'File', 'download_monitor' ),
+			'file'       => __( 'File', 'download_monitor' ),
 			'user'       => __( 'User', 'download_monitor' ),
 			'user_ip'    => __( 'IP Address', 'download_monitor' ),
 			'user_ua'    => __( 'User Agent', 'download_monitor' ),
