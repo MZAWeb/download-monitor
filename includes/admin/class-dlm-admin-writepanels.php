@@ -420,7 +420,6 @@ class DLM_Admin_Writepanels {
 			$downloadable_file_date			= $_POST['downloadable_file_date'];
 			$downloadable_file_date_hour	= $_POST['downloadable_file_date_hour'];
 			$downloadable_file_date_minute	= $_POST['downloadable_file_date_minute'];
-			$downloadable_file_download_count			= $_POST['downloadable_file_download_count'];
 
 			for ( $i = 0; $i <= max( array_keys( $downloadable_file_id ) ); $i ++ ) {
 
@@ -433,7 +432,6 @@ class DLM_Admin_Writepanels {
 				$file_date_hour      = absint( $downloadable_file_date_hour[ $i ] );
 				$file_date_minute    = absint( $downloadable_file_date_minute[ $i ] );
 				$file_date           = sanitize_text_field( $downloadable_file_date[ $i ] );
-				$file_download_count = sanitize_text_field( $downloadable_file_download_count[ $i ] );
 				$files               = array_filter( array_map( 'trim', explode( "\n", $downloadable_file_urls[ $i ] ) ) );
 
 				if ( ! $file_id )
@@ -476,13 +474,6 @@ class DLM_Admin_Writepanels {
 					update_post_meta( $file_id, '_md5', '' );
 					update_post_meta( $file_id, '_sha1', '' );
 					update_post_meta( $file_id, '_crc32', '' );
-				}
-
-				if ( $file_download_count !== '' ) {
-					update_post_meta( $file_id, '_download_count', absint( $file_download_count ) );
-					$total_download_count += absint( $file_download_count );
-				} else {
-					$total_download_count += absint( get_post_meta( $file_id, '_download_count', true ) );
 				}
 
 				do_action( 'dlm_save_downloadable_file', $file_id, $i );
