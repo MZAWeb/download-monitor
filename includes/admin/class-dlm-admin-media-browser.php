@@ -26,7 +26,9 @@ class DLM_Admin_Media_Browser {
 	public function media_browser() {
 		global $download_monitor;
 
-		$files = $download_monitor->list_files( ABSPATH, 1 );
+		$path = defined( 'DLM_BROWSE_PATH' ) ? DLM_BROWSE_PATH : ABSPATH;
+
+		$files = $download_monitor->list_files( $path, 1 );
 
 		echo '<!DOCTYPE html><html lang="en"><head><title>' . __( 'Browse for a file', 'download_monitor' ) . '</title>';
 
