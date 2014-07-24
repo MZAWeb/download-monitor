@@ -465,7 +465,7 @@ class DLM_Download {
 	 */
 	function get_file_version_ids() {
 		if ( ! is_array( $this->file_version_ids ) ) {
-			$this->file_version_ids = get_posts( 'post_parent=' . $this->id . '&post_type=dlm_download_version&orderby=menu_order&order=DESC&fields=ids&post_status=publish&numberposts=-1' );
+			$this->file_version_ids = get_posts( 'post_parent=' . $this->id . '&post_type=dlm_download_version&orderby=menu_order&order=ASC&fields=ids&post_status=publish&numberposts=-1' );
 		}
 
 		return $this->file_version_ids;
