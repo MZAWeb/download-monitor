@@ -423,7 +423,7 @@ class DLM_Download {
 	    $versions = $this->get_file_versions();
 
 	    foreach ( $versions as $version_id => $version )
-	    	if ( version_compare( $version->version, strtolower( $version_string ), '=' ) )
+	    	if ( version_compare( strtolower( $version->version ), strtolower( $version_string ), '=' ) )
 	    		return $version_id;
     }
 
