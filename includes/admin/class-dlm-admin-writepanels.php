@@ -275,12 +275,14 @@ class DLM_Admin_Writepanels {
 
 			// Uploading files
 			var dlm_upload_file_frame;
+		    var $file_path_field;
+		    var file_paths;
 
 			jQuery(document).on( 'click', '.dlm_upload_file', function( event ){
 
 				var $el = $(this);
-				var $file_path_field = $el.parent().parent().find('.downloadable_file_urls');
-				var file_paths = $file_path_field.val();
+				$file_path_field = $el.parent().parent().find('.downloadable_file_urls');
+				file_paths = $file_path_field.val();
 
 				event.preventDefault();
 
@@ -314,6 +316,8 @@ class DLM_Admin_Writepanels {
 					multiple: true,
 					states: downloadable_file_states,
 				});
+
+				dlm_upload_file_frame.off('select');
 
 				// When an image is selected, run a callback.
 				dlm_upload_file_frame.on( 'select', function() {
