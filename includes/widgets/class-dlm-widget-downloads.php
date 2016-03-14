@@ -20,7 +20,7 @@ class DLM_Widget_Downloads extends WP_Widget {
 	 * @access public
 	 * @return void
 	 */
-	function DLM_Widget_Downloads() {
+	public function __construct() {
 
 		/* Widget variable settings. */
 		$this->widget_cssclass    = 'dlm_widget_downloads';
@@ -32,7 +32,7 @@ class DLM_Widget_Downloads extends WP_Widget {
 		$widget_ops = array( 'classname' => $this->widget_cssclass, 'description' => $this->widget_description );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'dlm_widget_downloads', $this->widget_name, $widget_ops );
+		parent::__construct( 'dlm_widget_downloads', $this->widget_name, $widget_ops );
 	}
 
 	/**
